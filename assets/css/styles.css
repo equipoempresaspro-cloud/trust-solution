@@ -1288,7 +1288,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   }
 
   .hero-split__media { order: 2; min-height: 340px; }
-  .hero-split__media img { clip-path: none; }
+  .hero-split__media img,
+  .hero-split__media video { clip-path: none; }
   .hero-split__wedge { display: none; }
 
   .feature { grid-template-columns: 1fr; gap: 20px; }
