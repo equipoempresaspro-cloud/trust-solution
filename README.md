@@ -10,21 +10,22 @@ cualquier hosting (Netlify, Vercel, S3, Hostinger, cPanel…).
 ## Estructura
 
 ```
-index.html                  Inicio
-nosotros.html               Nosotros
-outsourcing-integral.html   Servicio core · plan mensual
-servicios-a-demanda.html    Proyectos puntuales + Gerencia Externa
-soluciones-premium.html     Psicosociales, capacitaciones, ISO
-contacto.html               Formulario + datos de contacto
+index.html                      Inicio
+nosotros.html                   Nosotros
+servicios.html                  Hub principal de Servicios
+outsourcing-integral.html       Servicio 1: Outsourcing Integral (Fee mensual)
+servicios-especializados.html   Servicio 2: Servicios Especializados (ISO, CENSOPAS, Capacitaciones)
+gerencia-externa-rrhh.html      Servicio 3: Gerencia externa de Recursos Humanos
+gestion-cumplimiento-mejora.html Servicio 4: Gestión, cumplimiento y mejora empresarial
+contacto.html                   Formulario + datos de contacto
 
-assets/css/tokens.css       Tokens del design system (colores, tipografía,
-                            espaciado, efectos) copiados literalmente
-assets/css/styles.css       Componentes + layout + responsive
-assets/js/site.js           Menú móvil y formulario
-assets/imagery/             Fotografías
-assets/logo/                Logotipo y marca
+assets/css/tokens.css          Tokens del design system
+assets/css/styles.css          Componentes + layout + submenú desplegable + responsive
+assets/js/site.js              Menú móvil y formulario
+assets/imagery/                Fotografías
+assets/logo/                   Logotipo y marca
 
-_src/Trust Solution Web.dc.html   Fuente original del diseño (referencia)
+_src/Trust Solution Web.dc.html  Fuente original del diseño (referencia)
 ```
 
 ## Cómo se tradujo el diseño

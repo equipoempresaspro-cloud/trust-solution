@@ -51,9 +51,17 @@
   <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
     <a href="index.html" aria-current="page">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
-    <a href="outsourcing-integral.html">Outsourcing Integral</a>
-    <a href="servicios-a-demanda.html">Servicios a Demanda</a>
-    <a href="soluciones-premium.html">Soluciones Premium</a>
+    <div class="nav-dropdown">
+      <a href="servicios.html" class="nav-dropdown__toggle">
+        Servicios <i class="ph-fill ph-caret-down" aria-hidden="true"></i>
+      </a>
+      <div class="nav-dropdown__menu">
+        <a href="outsourcing-integral.html"><i class="ph-fill ph-users-three" aria-hidden="true"></i> Outsourcing Integral</a>
+        <a href="servicios-especializados.html"><i class="ph-fill ph-star" aria-hidden="true"></i> Servicios Especializados</a>
+        <a href="gerencia-externa-rrhh.html"><i class="ph-fill ph-briefcase" aria-hidden="true"></i> Gerencia externa de RR.HH.</a>
+        <a href="gestion-cumplimiento-mejora.html"><i class="ph-fill ph-shield-check" aria-hidden="true"></i> Gestión, cumplimiento y mejora</a>
+      </div>
+    </div>
     <a href="contacto.html">Contacto</a>
     <a class="btn btn--sm" href="contacto.html">Agenda una Sesión</a>
   </nav>
@@ -111,31 +119,37 @@
     </div>
   </section>
 
-  <!-- Modelo de 3 niveles --------------------------------------------------- -->
+  <!-- Nuestros 4 Servicios Principales -------------------------------------- -->
   <section class="section section--tint">
     <div class="container">
       <div class="section-heading section-heading--center section-heading--lead">
-        <span class="eyebrow">Modelo de 3 niveles</span>
-        <h2>Elige el nivel de acompañamiento que tu empresa necesita</h2>
+        <span class="eyebrow">Soluciones integrales</span>
+        <h2>Nuestros 4 Servicios Principales</h2>
       </div>
-      <div class="grid grid--3 grid--tight grid--stretch">
+      <div class="grid grid--2 grid--wide">
         <article class="tier">
-          <span class="tier__label">Nivel 1</span>
-          <h3>Outsourcing Integral<span>Plan Mensual</span></h3>
+          <span class="tier__label">Servicio 1</span>
+          <h3>Outsourcing Integral de RR.HH.<span>Plan Mensual</span></h3>
           <p>La gestión mensual completa que combina planillas, asesoría legal, SST y desarrollo humano en un solo fee.</p>
           <a class="btn" href="outsourcing-integral.html">Ver Plan Mensual</a>
         </article>
         <article class="tier tier--mint">
-          <span class="tier__label">Nivel 2</span>
-          <h3>Servicios a Demanda<span>Proyectos</span></h3>
-          <p>Soluciones flexibles y módulos independientes que puedes contratar de forma puntual y a la medida de tus necesidades actuales.</p>
-          <a class="btn" href="servicios-a-demanda.html">Ver Proyectos Puntuales</a>
+          <span class="tier__label">Servicio 2</span>
+          <h3>Servicios Especializados<span>Soluciones Avanzadas</span></h3>
+          <p>Monitoreo CENSOPAS-COPSOQ, certificaciones ISO, homologaciones y capacitaciones de alto impacto.</p>
+          <a class="btn" href="servicios-especializados.html">Ver Servicios Especializados</a>
         </article>
         <article class="tier tier--dark">
-          <span class="tier__label">Nivel 3</span>
-          <h3>Soluciones de Alto Valor<span>Corporativo</span></h3>
-          <p>Servicios avanzados de consultoría para elevar la competitividad: monitoreos psicosociales, capacitaciones avanzadas y preparación de normas ISO.</p>
-          <a class="btn" href="soluciones-premium.html">Ver Soluciones Premium</a>
+          <span class="tier__label">Servicio 3</span>
+          <h3>Gerencia externa de RR.HH.<span>Dirección Estratégica</span></h3>
+          <p>Liderazgo de alto nivel directivo, alineamiento de objetivos y tableros de control de gestión humana.</p>
+          <a class="btn" href="gerencia-externa-rrhh.html">Ver Gerencia Externa</a>
+        </article>
+        <article class="tier">
+          <span class="tier__label">Servicio 4</span>
+          <h3>Gestión, cumplimiento y mejora<span>Blindaje y Eficiencia</span></h3>
+          <p>Reglamento Interno de Trabajo (RIT), auditorías laborales, orden de legajos y prevención ante SUNAFIL.</p>
+          <a class="btn" href="gestion-cumplimiento-mejora.html">Ver Gestión y Mejora</a>
         </article>
       </div>
     </div>
@@ -166,12 +180,19 @@
       <div class="site-footer__name">Trust Solution Consultores SAC</div>
       <p class="site-footer__blurb">El escudo laboral de los empresarios. Orden • Cumplimiento • Tranquilidad.</p>
     </div>
-    <nav class="site-footer__col" aria-labelledby="footer-servicios">
-      <h2 id="footer-servicios">Servicios</h2>
-      <a href="outsourcing-integral.html">Outsourcing Integral</a>
-      <a href="servicios-a-demanda.html">Servicios a Demanda</a>
-      <a href="soluciones-premium.html">Soluciones Premium</a>
+    <nav class="site-footer__col" aria-labelledby="footer-navegacion">
+      <h2 id="footer-navegacion">Navegación</h2>
+      <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <nav class="site-footer__col" aria-labelledby="footer-servicios">
+      <h2 id="footer-servicios">Nuestros Servicios</h2>
+      <a href="outsourcing-integral.html">Outsourcing Integral</a>
+      <a href="servicios-especializados.html">Servicios Especializados</a>
+      <a href="gerencia-externa-rrhh.html">Gerencia externa de RR.HH.</a>
+      <a href="gestion-cumplimiento-mejora.html">Gestión, cumplimiento y mejora empresarial</a>
     </nav>
     <div class="site-footer__col">
       <h2>Contacto</h2>

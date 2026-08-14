@@ -49,9 +49,17 @@
   <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
-    <a href="outsourcing-integral.html">Outsourcing Integral</a>
-    <a href="servicios-a-demanda.html">Servicios a Demanda</a>
-    <a href="soluciones-premium.html">Soluciones Premium</a>
+    <div class="nav-dropdown">
+      <a href="servicios.html" class="nav-dropdown__toggle">
+        Servicios <i class="ph-fill ph-caret-down" aria-hidden="true"></i>
+      </a>
+      <div class="nav-dropdown__menu">
+        <a href="outsourcing-integral.html"><i class="ph-fill ph-users-three" aria-hidden="true"></i> Outsourcing Integral</a>
+        <a href="servicios-especializados.html"><i class="ph-fill ph-star" aria-hidden="true"></i> Servicios Especializados</a>
+        <a href="gerencia-externa-rrhh.html"><i class="ph-fill ph-briefcase" aria-hidden="true"></i> Gerencia externa de RR.HH.</a>
+        <a href="gestion-cumplimiento-mejora.html"><i class="ph-fill ph-shield-check" aria-hidden="true"></i> Gestión, cumplimiento y mejora</a>
+      </div>
+    </div>
     <a href="contacto.html" aria-current="page">Contacto</a>
     <a class="btn btn--sm" href="contacto.html">Agenda una Sesión</a>
   </nav>
@@ -172,12 +180,19 @@
       <div class="site-footer__name">Trust Solution Consultores SAC</div>
       <p class="site-footer__blurb">El escudo laboral de los empresarios. Orden • Cumplimiento • Tranquilidad.</p>
     </div>
-    <nav class="site-footer__col" aria-labelledby="footer-servicios">
-      <h2 id="footer-servicios">Servicios</h2>
-      <a href="outsourcing-integral.html">Outsourcing Integral</a>
-      <a href="servicios-a-demanda.html">Servicios a Demanda</a>
-      <a href="soluciones-premium.html">Soluciones Premium</a>
+    <nav class="site-footer__col" aria-labelledby="footer-navegacion">
+      <h2 id="footer-navegacion">Navegación</h2>
+      <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <nav class="site-footer__col" aria-labelledby="footer-servicios">
+      <h2 id="footer-servicios">Nuestros Servicios</h2>
+      <a href="outsourcing-integral.html">Outsourcing Integral</a>
+      <a href="servicios-especializados.html">Servicios Especializados</a>
+      <a href="gerencia-externa-rrhh.html">Gerencia externa de RR.HH.</a>
+      <a href="gestion-cumplimiento-mejora.html">Gestión, cumplimiento y mejora empresarial</a>
     </nav>
     <div class="site-footer__col">
       <h2>Contacto</h2>
