@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/tokens/colors.css">
+<link rel="stylesheet" href="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/tokens/typography.css">
+<link rel="stylesheet" href="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/tokens/effects.css">
+<link rel="stylesheet" href="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="_ds/trust-solution-design-system-75bad753-fad7-48a4-a3c6-c4f8172ac552/_ds_bundle.js"></script>
+<style>
+body{margin:0;font-family:var(--font-body);color:var(--text-body);background:var(--surface-page);}
+a{color:var(--link-color);text-decoration:none;}
+a:hover{color:var(--link-hover);}
+p{text-wrap:pretty;}
+</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.96);borderBottom:1px solid var(--border-subtle);display:flex;alignItems:center;justifyContent:space-between;gap:32px;padding:14px 40px">
+  <img src="assets/logo/trust-solution-logo-full.png" alt="Trust Solution Consultores SAC" onClick="{{ goHome }}" style="height:46px;objectFit:contain;cursor:pointer" />
+  <nav style="display:flex;alignItems:center;gap:26px">
+    <a onClick="{{ goHome }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Inicio</a>
+    <a onClick="{{ goNosotros }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Nosotros</a>
+    <a onClick="{{ goCore }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Outsourcing Integral</a>
+    <a onClick="{{ goDemanda }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Servicios a Demanda</a>
+    <a onClick="{{ goPremium }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Soluciones Premium</a>
+    <a onClick="{{ goContacto }}" style="cursor:pointer;fontWeight:700;fontSize:15px;color:var(--text-heading)" style-hover="color:var(--ts-mint-600)">Contacto</a>
+    <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="sm" onClick="{{ goContacto }}" hint-size="auto,38px">Agenda una Sesión</x-import>
+  </nav>
+</header>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main>
+  <section style="display:grid;gridTemplateColumns:1.05fr 0.95fr;alignItems:center;background:var(--gradient-tint)">
+    <div style="padding:96px 40px 96px 64px;maxWidth:660px">
+      <div style="display:inline-flex;marginBottom:22px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Badge" tone="mint" hint-size="auto,40px">Orden • Cumplimiento • Tranquilidad</x-import>
+      </div>
+      <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(38px,4.4vw,60px);lineHeight:1.06;color:var(--text-heading);margin:0 0 10px">Gestión humana que protege y potencia tu empresa.</h1>
+      <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent);marginBottom:24px"></div>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);color:var(--text-body);margin:0 0 34px">Unimos el cumplimiento legal y el blindaje ante contingencias con el desarrollo de tus equipos. Llevamos el orden, la tranquilidad y la productividad de una gran Gerencia de Recursos Humanos a empresas en crecimiento.</p>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="lg" onClick="{{ goContacto }}" hint-size="auto,58px">Agenda un Diagnóstico de Riesgos Laborales</x-import>
+    </div>
+    <div style="position:relative;height:100%;minHeight:560px">
+      <img src="assets/imagery/stock-colleagues-tablet.jpg" alt="Equipo revisando indicadores de gestión humana" style="width:100%;height:100%;objectFit:cover;clipPath:polygon(14% 0,100% 0,100% 100%,0 100%)" />
+      <div style="position:absolute;left:0;bottom:0;width:180px;height:180px;background:var(--gradient-brand);clipPath:polygon(0 100%,0 22%,100% 100%);opacity:0.92"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface-muted);padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="display:flex;justifyContent:center;textAlign:center;marginBottom:52px">
+        <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-3xl);lineHeight:1.14;color:var(--text-heading);margin:0;maxWidth:820px">Como empresario… ¿Te identificas con alguno de estos retos en tu día a día?</h2>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(3,1fr);gap:28px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,280px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-hourglass-high" hint-size="74px,74px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:22px 0 10px">Falta de tiempo</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Dedicas valiosas horas de tu jornada a resolver dudas contractuales o calcular planillas, distrayéndote de tu foco comercial y del crecimiento del negocio.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,280px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-scales" hint-size="74px,74px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:22px 0 10px">Incertidumbre legal</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Sientes dudas sobre si tu organización cumple al 100% con la normativa laboral o temes enfrentar fiscalizaciones imprevistas de SUNAFIL o demandas laborales.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,280px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-folders" hint-size="74px,74px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:22px 0 10px">Necesidad de orden</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Buscas profesionalizar tus procesos internos, organizar adecuadamente los legajos de tu personal y dejar atrás la improvisación administrativa.</p>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:96px 40px">
+    <div style="maxWidth:820px;margin:0 auto;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:22px">
+      <p style="fontFamily:var(--font-body);fontStyle:italic;fontWeight:600;fontSize:var(--fs-lg);color:var(--ts-mint-600);margin:0">Tu área de RR.HH. externa</p>
+      <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-3xl);lineHeight:1.14;color:var(--text-heading);margin:0">La alternativa estratégica</h2>
+      <div style="width:96px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent)"></div>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);margin:0">En TS Consultores nos convertimos en tu aliado estratégico. Brindamos a las empresas en crecimiento el respaldo de un equipo especializado en gestión de personas y cumplimiento legal, permitiéndoles acceder a un soporte profesional de alto nivel sin asumir los altos costos operativos de implementar un área interna completa.</p>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" variant="outline" onClick="{{ goCore }}" hint-size="auto,50px">Conoce cómo trabajamos</x-import>
+    </div>
+  </section>
+
+  <section style="background:var(--gradient-tint);padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="marginBottom:44px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.SectionHeading" align="center" eyebrow="Modelo de 3 niveles" title="Elige el nivel de acompañamiento que tu empresa necesita" hint-size="100%,150px"></x-import>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(3,1fr);gap:26px;alignItems:stretch">
+        <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:38px 32px;display:flex;flexDirection:column;gap:16px">
+          <span style="fontFamily:var(--font-display);fontWeight:800;fontSize:14px;letterSpacing:0.12em;textTransform:uppercase;color:var(--ts-mint-600)">Nivel 1</span>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:0">Outsourcing Integral<br /><span style="fontSize:16px;fontWeight:600;color:var(--text-muted)">Plan Mensual</span></h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed);flexGrow:1">La gestión mensual completa que combina planillas, asesoría legal, SST y desarrollo humano en un solo fee.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" onClick="{{ goCore }}" hint-size="auto,50px">Ver Plan Mensual</x-import>
+        </div>
+        <div style="background:var(--ts-mint-50);border:1px solid var(--ts-mint-200);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:38px 32px;display:flex;flexDirection:column;gap:16px">
+          <span style="fontFamily:var(--font-display);fontWeight:800;fontSize:14px;letterSpacing:0.12em;textTransform:uppercase;color:var(--ts-mint-600)">Nivel 2</span>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:0">Servicios a Demanda<br /><span style="fontSize:16px;fontWeight:600;color:var(--text-muted)">Proyectos</span></h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed);flexGrow:1">Soluciones flexibles y módulos independientes que puedes contratar de forma puntual y a la medida de tus necesidades actuales.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" onClick="{{ goDemanda }}" hint-size="auto,50px">Ver Proyectos Puntuales</x-import>
+        </div>
+        <div style="background:var(--surface-dark);borderRadius:var(--radius-lg);boxShadow:var(--shadow-md);padding:38px 32px;display:flex;flexDirection:column;gap:16px">
+          <span style="fontFamily:var(--font-display);fontWeight:800;fontSize:14px;letterSpacing:0.12em;textTransform:uppercase;color:var(--ts-mint-300)">Nivel 3</span>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:#fff;margin:0">Soluciones de Alto Valor<br /><span style="fontSize:16px;fontWeight:600;color:rgba(255,255,255,0.6)">Corporativo</span></h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed);color:rgba(255,255,255,0.85);flexGrow:1">Servicios avanzados de consultoría para elevar la competitividad: monitoreos psicosociales, capacitaciones avanzadas y preparación de normas ISO.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" onClick="{{ goPremium }}" hint-size="auto,50px">Ver Soluciones Premium</x-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--gradient-dark);padding:88px 40px">
+    <div style="maxWidth:980px;margin:0 auto;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:24px">
+      <div style="display:flex;gap:28px;color:var(--ts-mint-300);fontSize:34px">
+        <i class="ph-fill ph-shield-check"></i>
+        <i class="ph-fill ph-users-three"></i>
+        <i class="ph-fill ph-trend-up"></i>
+      </div>
+      <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-3xl);lineHeight:1.16;color:#fff;margin:0">Libera a tu empresa de la gestión de Recursos Humanos mientras aseguras el cumplimiento normativo y fortaleces tu cultura organizacional.</h2>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);color:rgba(255,255,255,0.82);margin:0;maxWidth:720px">Da el paso hacia la formalidad laboral. Agenda una sesión de diagnóstico con nuestros especialistas hoy mismo.</p>
+      <a href="https://wa.me/51992823613" target="_blank" rel="noopener" style="display:inline-flex;alignItems:center;gap:10px;fontFamily:var(--font-display);fontWeight:700;fontSize:18px;color:var(--ts-teal-800);background:#fff;padding:17px 36px;borderRadius:var(--radius-pill)" style-hover="transform:translateY(-2px);boxShadow:var(--shadow-lg);color:var(--ts-teal-800)"><i class="ph-fill ph-whatsapp-logo" style="fontSize:22px;color:var(--ts-mint-600)"></i>Agendar Reunión por WhatsApp</a>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isNosotros }}" hint-placeholder-val="{{ false }}">
+<main>
+  <section style="background:var(--gradient-tint);padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto;display:grid;gridTemplateColumns:0.85fr 1.15fr;gap:64px;alignItems:center">
+      <div style="position:relative">
+        <img src="assets/imagery/stock-colleagues-review.jpg" alt="Emma Álvarez, Gerente General de TS Consultores" style="width:100%;height:520px;objectFit:cover;borderRadius:var(--radius-xl);boxShadow:var(--shadow-lg)" />
+        <div style="position:absolute;right:-18px;bottom:-18px;background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-md);padding:18px 22px">
+          <div style="fontFamily:var(--font-display);fontWeight:800;color:var(--text-heading);fontSize:18px">Emma Álvarez</div>
+          <div style="fontSize:14px;color:var(--text-muted)">Gerente General · +20 años en RR.HH.</div>
+        </div>
+      </div>
+      <div>
+        <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(34px,3.6vw,48px);lineHeight:1.1;color:var(--text-heading);margin:0 0 12px">Unión, respaldo y crecimiento para tu empresa.</h1>
+        <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent);marginBottom:26px"></div>
+        <p style="fontSize:var(--fs-base);lineHeight:var(--lh-relaxed);margin:0 0 18px">Las micro, pequeñas y medianas empresas enfrentan las mismas obligaciones y riesgos laborales que las grandes corporaciones, pero rara vez disponen de un equipo especializado que las acompañe en su crecimiento.</p>
+        <p style="fontSize:var(--fs-base);lineHeight:var(--lh-relaxed);margin:0">TS Consultores nació bajo la dirección de Emma Álvarez (Licenciada en Relaciones Industriales con más de 20 años de trayectoria liderando áreas de RR.HH.) con un propósito claro: ser el aliado estratégico que ayuda a los empresarios a crecer con orden y seguridad, sin los altos costos de implementar un área interna completa. No entregamos simples papeles; construimos una gestión laboral sólida, preventiva y sostenible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:80px 40px">
+    <div style="maxWidth:1180px;margin:0 auto;display:flex;justifyContent:center">
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Quote" author="Emma Álvarez" role="Gerente General, TS Consultores" hint-size="640px,240px">Nuestra labor equilibra el cumplimiento legal de las empresas con un entorno laboral humano y productivo, construyendo organizaciones más sólidas y sostenibles.</x-import>
+    </div>
+  </section>
+
+  <section style="background:var(--surface-muted);padding:88px 40px">
+    <div style="maxWidth:1000px;margin:0 auto;display:grid;gridTemplateColumns:1fr 1fr;gap:56px">
+      <div style="display:flex;flexDirection:column;gap:16px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-target" hint-size="74px,74px"></x-import>
+        <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-2xl);color:var(--text-heading);margin:0">Nuestra Misión</h2>
+        <p style="margin:0;fontSize:var(--fs-base);lineHeight:var(--lh-relaxed)">Acompañar a las empresas en la gestión de su capital humano, brindándoles orden, cumplimiento normativo y la tranquilidad necesaria para enfocarse en su crecimiento.</p>
+      </div>
+      <div style="display:flex;flexDirection:column;gap:16px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-eye" hint-size="74px,74px"></x-import>
+        <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-2xl);color:var(--text-heading);margin:0">Nuestra Visión</h2>
+        <p style="margin:0;fontSize:var(--fs-base);lineHeight:var(--lh-relaxed)">Ser la consultora de referencia para las PYMES, profesionalizando las relaciones laborales y convirtiendo la gestión de personal en un motor de desarrollo empresarial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="marginBottom:44px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.SectionHeading" align="center" eyebrow="Garantías de confianza" title="Nuestros pilares" hint-size="100%,140px"></x-import>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(3,1fr);gap:28px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="34px" hint-size="100%,260px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-medal" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Profesionalismo Técnico</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Sustentado en más de 20 años de experiencia real liderando la gestión de personas en sectores clave como minería, construcción, tecnología, industria y servicios.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="34px" hint-size="100%,260px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-handshake" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Cercanía y Adaptabilidad</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Entendemos a fondo la realidad y el día a día de una empresa en crecimiento. Nos adaptamos a tu ritmo y a la cultura de tu organización.</p>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="34px" hint-size="100%,260px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-shield-check" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Enfoque Preventivo</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Actuamos antes de que aparezcan los problemas. Cambiamos el miedo a las fiscalizaciones imprevistas por una cultura proactiva de cumplimiento laboral.</p>
+        </x-import>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isCore }}" hint-placeholder-val="{{ false }}">
+<main>
+  <section style="display:grid;gridTemplateColumns:1fr 1fr;alignItems:center;background:var(--gradient-tint)">
+    <div style="padding:88px 40px 88px 64px;maxWidth:660px">
+      <div style="display:inline-flex;marginBottom:20px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Badge" tone="dark" hint-size="auto,40px">Servicio Core · Plan Mensual</x-import>
+      </div>
+      <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(34px,3.8vw,52px);lineHeight:1.08;color:var(--text-heading);margin:0 0 12px">Outsourcing Integral de Recursos Humanos</h1>
+      <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent);marginBottom:24px"></div>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);margin:0 0 30px">Un solo fee mensual para blindar tu negocio y potenciar a tu equipo. La gestión mensual completa que combina planillas, asesoría legal, Seguridad y Salud en el Trabajo (SST) y desarrollo humano.</p>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="lg" onClick="{{ goContacto }}" hint-size="auto,58px">Solicita tu Diagnóstico Operativo Inicial</x-import>
+    </div>
+    <div style="height:100%;minHeight:520px">
+      <img src="assets/imagery/stock-executive-desk.jpg" alt="Gestión administrativa ordenada" style="width:100%;height:100%;objectFit:cover;clipPath:polygon(14% 0,100% 0,100% 100%,0 100%)" />
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="marginBottom:48px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.SectionHeading" align="center" eyebrow="Cómo lo hacemos" title="Los 4 pilares estratégicos" hint-size="100%,140px"></x-import>
+      </div>
+      <div style="display:grid;gridTemplateColumns:1fr 1fr;gap:32px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="40px" hint-size="100%,420px">
+          <div style="display:flex;alignItems:center;gap:18px;marginBottom:8px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-gavel" hint-size="74px,74px"></x-import>
+            <div>
+              <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600)">Pilar A</div>
+              <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:2px 0 0">Protección Legal Laboral y Cumplimiento Normativo</h3>
+            </div>
+          </div>
+          <p style="fontStyle:italic;fontWeight:600;color:var(--ts-teal-600);margin:12px 0 20px">Protegemos tu empresa de riesgos laborales.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diagnóstico inicial y continuo de cumplimiento laboral.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Elaboración, control y renovación oportuna de contratos de trabajo bajo las modalidades correctas.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Acompañamiento preventivo legal laboral y atención de consultas complejas.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Gestión y auditoría del orden documentario laboral.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Seguimiento de requerimientos y blindaje técnico ante fiscalizaciones de SUNAFIL.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diseño e implementación de políticas internas, procedimientos de conducta y medidas disciplinarias.</x-import>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="40px" hint-size="100%,420px">
+          <div style="display:flex;alignItems:center;gap:18px;marginBottom:8px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-chart-bar" hint-size="74px,74px"></x-import>
+            <div>
+              <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600)">Pilar B</div>
+              <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:2px 0 0">Administración Inteligente del Personal</h3>
+            </div>
+          </div>
+          <p style="fontStyle:italic;fontWeight:600;color:var(--ts-teal-600);margin:12px 0 20px">Exactitud y orden en tu gestión mensual.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Administración y procesamiento exacto de planillas de pago (sueldos, gratificaciones, CTS, vacaciones y liquidaciones).</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Coordinación mensual directa con tu área contable para declaraciones en PLAME y AFP Net.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Control documentario estricto de descansos médicos, subsidios, licencias y periodos vacacionales del personal.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Proyecciones periódicas de costos laborales para facilitar la toma de decisiones financieras.</x-import>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="40px" hint-size="100%,420px">
+          <div style="display:flex;alignItems:center;gap:18px;marginBottom:8px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-users-three" hint-size="74px,74px"></x-import>
+            <div>
+              <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600)">Pilar C</div>
+              <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:2px 0 0">Desarrollo Humano y Cultura Organizacional</h3>
+            </div>
+          </div>
+          <p style="fontStyle:italic;fontWeight:600;color:var(--ts-teal-600);margin:12px 0 20px">El motor de un equipo comprometido y productivo.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Evaluaciones periódicas de clima laboral para fortalecer la cultura interna.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diseño e implementación de sistemas prácticos de evaluación del desempeño de los colaboradores.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Elaboración y ejecución del Plan Anual de Capacitación adaptado a la empresa.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Estandarización de políticas de comunicación interna para mejorar la colaboración.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Desarrollo y seguimiento de indicadores clave de gestión (KPIs) para medir la productividad.</x-import>
+        </x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="40px" hint-size="100%,420px">
+          <div style="display:flex;alignItems:center;gap:18px;marginBottom:8px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-first-aid-kit" hint-size="74px,74px"></x-import>
+            <div>
+              <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600)">Pilar D</div>
+              <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:var(--text-heading);margin:2px 0 0">Seguridad y Salud en el Trabajo (SST)</h3>
+            </div>
+          </div>
+          <p style="fontStyle:italic;fontWeight:600;color:var(--ts-teal-600);margin:12px 0 20px">Prevención integral de accidentes y resguardo legal.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diseño e implementación del Sistema de Seguridad y Salud en el Trabajo (SST).</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Asesoría técnica para la elección, constitución y funcionamiento del Comité o Supervisor de SST obligatorio.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Elaboración y actualización de la Matriz IPERC y Plan Anual de SST.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Ejecución de capacitaciones de seguridad obligatorias exigidas por ley.</x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Mitigación de riesgos operativos y prevención de contingencias o multas imprevistas ante SUNAFIL.</x-import>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--gradient-tint);padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="marginBottom:44px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.SectionHeading" align="center" eyebrow="Beneficios clave" title="Lo que gana tu empresa" hint-size="100%,140px"></x-import>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(3,1fr);gap:26px;marginBottom:52px">
+        <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:34px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-coins" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Optimización de costos operativos</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Acceso a un equipo multidisciplinario senior por una fracción del costo de contratar directores de planilla internos.</p>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:34px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-leaf" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Paz mental</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">El dueño y el equipo administrativo recuperan el foco en vender y expandir la empresa, mientras los expertos resguardan la legalidad del negocio.</p>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:34px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-compass" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:18px 0 10px">Decisiones seguras</h3>
+          <p style="margin:0;lineHeight:var(--lh-relaxed)">Respuestas y diagnósticos en tiempo real para evitar cometer errores costosos con el personal.</p>
+        </div>
+      </div>
+      <div style="display:flex;justifyContent:center">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="lg" onClick="{{ goContacto }}" hint-size="auto,58px">Solicita tu Diagnóstico Operativo Inicial</x-import>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isDemanda }}" hint-placeholder-val="{{ false }}">
+<main>
+  <section style="background:var(--gradient-tint);padding:88px 40px 72px">
+    <div style="maxWidth:900px;margin:0 auto;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:20px">
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Badge" tone="mint" hint-size="auto,40px">Proyectos puntuales</x-import>
+      <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(34px,3.8vw,52px);lineHeight:1.08;color:var(--text-heading);margin:0">Soluciones Especializadas a Demanda</h1>
+      <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent)"></div>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);margin:0;background:#fff;border:1px solid var(--ts-mint-200);borderRadius:var(--radius-lg);boxShadow:var(--shadow-sm);padding:26px 32px">Estos servicios forman parte integral de nuestro programa mensual de Outsourcing. No obstante, si tu empresa aún no cuenta con nuestro soporte completo, puedes contratarlos de forma independiente para solucionar requerimientos específicos de tu negocio:</p>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:72px 40px 88px">
+    <div style="maxWidth:1180px;margin:0 auto;display:grid;gridTemplateColumns:repeat(2,1fr);gap:28px">
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-note-pencil" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">1. Diseño e Implementación de Normativas Internas</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Elaboramos y actualizamos la base normativa interna de tu negocio para sentar las reglas del juego de forma clara y legal.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Creación y actualización del Reglamento Interno de Trabajo (RIT) según la ley vigente.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diseño de políticas salariales equitativas y códigos de conducta/ética organizacional.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Formalización de procedimientos internos de trabajo de cada área corporativa.</x-import>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-magnifying-glass" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">2. Auditorías Laborales y Diagnóstico de Cumplimiento</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Evaluamos el estado real de tu gestión laboral para detectar errores corregibles antes de recibir una fiscalización.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Revisión técnica de los procesos actuales del área de administración de personas.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Identificación de brechas legales laborales frente a la normativa vigente.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Evaluación de riesgos y diseño estratégico de planes de acción correctivos.</x-import>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-archive" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">3. Organización y Regularización de Documentación Laboral</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Ordenamos, sistematizamos y actualizamos la información contractual y laboral histórica del personal de tu empresa.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Organización y auditoría física/digital de legajos de personal.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Control integral de contratos laborales vigentes, renovaciones y adendas obligatorias.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Configuración de formatos y actas de descargo requeridas legalmente.</x-import>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-sitemap" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">4. Diseño de Perfiles de Puesto y Estructuras Organizacionales</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Construimos la estructura organizativa lógica que tu empresa necesita para poder delegar funciones y escalar con orden.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Creación de organigramas lógicos que delimiten funciones e interconexiones de mando.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Elaboración a medida del Manual de Organización y Funciones (MOF).</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Descripción detallada de responsabilidades, metas y competencias de cada puesto.</x-import>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-trend-up" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">5. Evaluaciones de Desempeño y Clima Laboral</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Medimos objetivamente el ambiente de trabajo y el rendimiento individual para mejorar el clima y la retención del talento clave.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Aplicación científica de encuestas de clima organizacional con planes de acción.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Diseño e implementación de evaluaciones de desempeño 360° y de productividad.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Estructuración de encuestas y entrevistas de retiro dirigidas a la mejora continua.</x-import>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="36px" hint-size="100%,300px">
+        <div style="display:flex;alignItems:center;gap:16px;marginBottom:16px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-briefcase" size="sm" hint-size="48px,48px"></x-import>
+          <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0">6. Consultoría Legal Laboral y Atención de Requerimientos</h3>
+        </div>
+        <p style="margin:0 0 18px;lineHeight:var(--lh-relaxed)">Te brindamos asesoría estratégica ante cualquier duda diaria o crisis laboral, protegiendo tus intereses empresariales.</p>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Asesoría especializada para la correcta toma de decisiones complejas sobre el personal.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Acompañamiento y soporte directo ante inspecciones e interacciones complejas de SUNAFIL.</x-import>
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Apoyo técnico permanente en la gestión de desvinculaciones o resolución de conflictos.</x-import>
+      </x-import>
+    </div>
+  </section>
+
+  <section style="background:var(--ts-mint-50);borderTop:1px solid var(--ts-mint-200);padding:88px 40px">
+    <div style="maxWidth:1180px;margin:0 auto">
+      <div style="display:grid;gridTemplateColumns:0.9fr 1.1fr;gap:56px;alignItems:start">
+        <div>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-user-gear" size="lg" hint-size="96px,96px"></x-import>
+          <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-3xl);lineHeight:1.12;color:var(--text-heading);margin:24px 0 12px">Gerencia Externa de Recursos Humanos</h2>
+          <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent);marginBottom:22px"></div>
+          <p style="fontSize:var(--fs-base);lineHeight:var(--lh-relaxed);margin:0 0 28px">Dirección estratégica para empresas que ya cuentan con un área o responsable de Recursos Humanos, pero requieren acompañamiento ejecutivo, supervisión senior y asesoría especializada para potenciar la gestión del talento, asegurar el cumplimiento normativo y minimizar riesgos laborales.</p>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" onClick="{{ goContacto }}" hint-size="auto,50px">Agenda una sesión para evaluar tu Gerencia Externa</x-import>
+        </div>
+        <div style="display:flex;flexDirection:column;gap:18px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-sm);padding:26px 30px">
+            <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0 0 12px">Dirección y Supervisión Estratégica de RR.HH.</h3>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Alineación de la gestión humana con los objetivos comerciales y de rentabilidad del negocio.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Planificación anual del área, prioridades operativas y diseño organizacional general.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Supervisión y mentoría directa al responsable interno para garantizar ejecuciones óptimas.</x-import>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-sm);padding:26px 30px">
+            <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0 0 12px">Asesoría Legal Laboral Preventiva y Cumplimiento</h3>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Validación legal de procesos de contratación, sanciones disciplinarias complejas y desvinculaciones.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Acompañamiento preventivo estratégico frente a inspecciones y requerimientos SUNAFIL.</x-import>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-sm);padding:26px 30px">
+            <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0 0 12px">Auditorías de Gestión e Indicadores Clave (KPIs)</h3>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Auditorías documentarias periódicas a planillas, legajos, contratos y plan de SST.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Implementación y monitoreo de tableros de control de rotación, ausentismo y costo laboral.</x-import>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-sm);padding:26px 30px">
+            <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0 0 12px">Mentoría y Desarrollo del Equipo Interno</h3>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Coaching ejecutivo y entrenamiento técnico para acelerar el crecimiento del responsable interno de RR.HH.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Transferencia de metodologías, buenas prácticas gerenciales y plantillas operativas.</x-import>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);borderRadius:var(--radius-md);boxShadow:var(--shadow-sm);padding:26px 30px">
+            <h3 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-lg);color:var(--text-heading);margin:0 0 12px">Estandarización de Políticas y Cultura</h3>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Revisión anual y actualización del Reglamento Interno y políticas de compensación.</x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.ChecklistItem" hint-size="100%,28px">Asesoría senior en planes de motivación, gestión del cambio y retención de talento clave.</x-import>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isPremium }}" hint-placeholder-val="{{ false }}">
+<main>
+  <section style="background:var(--gradient-tint);padding:96px 40px 76px">
+    <div style="maxWidth:860px;margin:0 auto;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:20px">
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Badge" tone="dark" hint-size="auto,40px">Premium</x-import>
+      <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(34px,3.8vw,52px);lineHeight:1.08;color:var(--text-heading);margin:0">Soluciones Especializadas de Alto Valor Corporativo</h1>
+      <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-500),var(--ts-teal-700),transparent)"></div>
+      <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);margin:0;maxWidth:660px">Impulsa la competitividad de tu empresa, mitiga riesgos críticos y abre las puertas a mercados corporativos exigentes.</p>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:76px 40px 88px">
+    <div style="maxWidth:1180px;margin:0 auto;display:flex;flexDirection:column;gap:32px">
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="44px" hint-size="100%,240px">
+        <div style="display:grid;gridTemplateColumns:96px 1fr;gap:32px;alignItems:start">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-brain" size="lg" hint-size="96px,96px"></x-import>
+          <div>
+            <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600);marginBottom:6px">Protección del entorno laboral</div>
+            <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-2xl);color:var(--text-heading);margin:0 0 14px">Monitoreo de Riesgos Psicosociales (CENSOPAS-COPSOQ)</h2>
+            <p style="margin:0;fontSize:var(--fs-base);lineHeight:var(--lh-relaxed)">Evaluamos científicamente los factores del entorno laboral que impactan en la salud mental y emocional de tus colaboradores, implementando el método normativo obligatorio exigido por ley. Prevenimos el estrés laboral y la rotación, asegurando un equipo de trabajo saludable, enfocado y estable.</p>
+          </div>
+        </div>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="44px" hint-size="100%,240px">
+        <div style="display:grid;gridTemplateColumns:96px 1fr;gap:32px;alignItems:start">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-handshake" size="lg" hint-size="96px,96px"></x-import>
+          <div>
+            <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600);marginBottom:6px">Equipos de alto desempeño</div>
+            <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-2xl);color:var(--text-heading);margin:0 0 14px">Capacitaciones y Desarrollo Humano</h2>
+            <p style="margin:0;fontSize:var(--fs-base);lineHeight:var(--lh-relaxed)">Programas dinámicos y talleres prácticos diseñados a la medida para transformar grupos de trabajo en equipos de alto rendimiento. Desarrollamos el liderazgo efectivo, la comunicación asertiva y la inteligencia emocional de tus colaboradores, alineándolos firmemente con los objetivos comerciales de tu empresa.</p>
+          </div>
+        </div>
+      </x-import>
+      <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Card" padding="44px" hint-size="100%,280px">
+        <div style="display:grid;gridTemplateColumns:96px 1fr;gap:32px;alignItems:start">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.IconCircle" icon="ph-fill ph-medal" size="lg" hint-size="96px,96px"></x-import>
+          <div>
+            <div style="fontSize:13px;fontWeight:800;letterSpacing:0.14em;textTransform:uppercase;color:var(--ts-mint-600);marginBottom:6px">Herramientas para ganar licitaciones</div>
+            <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-2xl);color:var(--text-heading);margin:0 0 14px">Certificación de Sistemas de Gestión (ISO) y Homologación</h2>
+            <p style="margin:0 0 22px;fontSize:var(--fs-base);lineHeight:var(--lh-relaxed)">Brindamos consultoría y acompañamiento técnico experto en la implementación de normas internacionales indispensables para competir en las grandes ligas. Elevamos tu estándar operativo para superar auditorías de homologación de proveedores y captar clientes corporativos exigentes.</p>
+            <div style="display:flex;gap:14px;flexWrap:wrap">
+              <span style="fontFamily:var(--font-display);fontWeight:700;fontSize:14px;color:var(--text-heading);background:var(--ts-mint-50);border:1.5px solid var(--ts-mint-200);borderRadius:var(--radius-pill);padding:9px 20px">ISO 9001 · Calidad</span>
+              <span style="fontFamily:var(--font-display);fontWeight:700;fontSize:14px;color:var(--text-heading);background:var(--ts-mint-50);border:1.5px solid var(--ts-mint-200);borderRadius:var(--radius-pill);padding:9px 20px">ISO 14001 · Medio Ambiente</span>
+              <span style="fontFamily:var(--font-display);fontWeight:700;fontSize:14px;color:var(--text-heading);background:var(--ts-mint-50);border:1.5px solid var(--ts-mint-200);borderRadius:var(--radius-pill);padding:9px 20px">ISO 45001 · Seguridad y Salud</span>
+              <span style="fontFamily:var(--font-display);fontWeight:700;fontSize:14px;color:var(--text-heading);background:var(--ts-mint-50);border:1.5px solid var(--ts-mint-200);borderRadius:var(--radius-pill);padding:9px 20px">ISO 37001 · Anti-soborno</span>
+            </div>
+          </div>
+        </div>
+      </x-import>
+      <div style="display:flex;justifyContent:center;marginTop:12px">
+        <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="lg" onClick="{{ goContacto }}" hint-size="auto,58px">Consulta por Programas Corporativos e ISO</x-import>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isContacto }}" hint-placeholder-val="{{ false }}">
+<main>
+  <section style="background:var(--gradient-dark);padding:88px 40px">
+    <div style="maxWidth:1120px;margin:0 auto;display:grid;gridTemplateColumns:1fr 1fr;gap:64px;alignItems:start">
+      <div>
+        <h1 style="fontFamily:var(--font-display);fontWeight:800;fontSize:clamp(32px,3.4vw,46px);lineHeight:1.1;color:#fff;margin:0 0 16px">Construyamos juntos el crecimiento sostenible de tu negocio.</h1>
+        <div style="width:120px;height:3px;background:linear-gradient(90deg,var(--ts-mint-400),rgba(255,255,255,0.15));marginBottom:24px"></div>
+        <p style="fontSize:var(--fs-lg);lineHeight:var(--lh-relaxed);color:rgba(255,255,255,0.85);margin:0 0 40px">Da el paso hacia el orden laboral y la tranquilidad de tu empresa. Agenda una sesión de diagnóstico hoy mismo con nuestros especialistas.</p>
+        <div style="display:flex;flexDirection:column;gap:22px">
+          <div style="display:flex;alignItems:center;gap:16px">
+            <i class="ph-fill ph-user-circle" style="fontSize:26px;color:var(--ts-mint-300)"></i>
+            <div>
+              <div style="fontSize:13px;color:rgba(255,255,255,0.6)">Líder de Consultoría</div>
+              <div style="fontWeight:700;color:#fff">Emma Álvarez — Gerente General</div>
+            </div>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <i class="ph-fill ph-whatsapp-logo" style="fontSize:26px;color:var(--ts-mint-300)"></i>
+            <div>
+              <div style="fontSize:13px;color:rgba(255,255,255,0.6)">Teléfono / WhatsApp</div>
+              <a href="https://wa.me/51992823613" target="_blank" rel="noopener" style="fontWeight:700;color:#fff" style-hover="color:var(--ts-mint-300)">+51 992 823 613</a>
+            </div>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <i class="ph-fill ph-envelope-simple" style="fontSize:26px;color:var(--ts-mint-300)"></i>
+            <div>
+              <div style="fontSize:13px;color:rgba(255,255,255,0.6)">Correo electrónico</div>
+              <a href="mailto:ealvarez@tsconsultoressac.com" style="fontWeight:700;color:#fff" style-hover="color:var(--ts-mint-300)">ealvarez@tsconsultoressac.com</a>
+            </div>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <i class="ph-fill ph-map-pin" style="fontSize:26px;color:var(--ts-mint-300)"></i>
+            <div>
+              <div style="fontSize:13px;color:rgba(255,255,255,0.6)">Ubicación</div>
+              <div style="fontWeight:700;color:#fff">Lima, Perú</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);borderRadius:var(--radius-xl);padding:38px">
+        <h2 style="fontFamily:var(--font-display);fontWeight:800;fontSize:var(--fs-xl);color:#fff;margin:0 0 24px">Solicita tu diagnóstico preventivo</h2>
+        <div style="display:flex;flexDirection:column;gap:18px">
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Input" tone="dark" label="Nombre completo del contacto" placeholder="Ej. Emma Álvarez" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Input" tone="dark" label="Nombre de la empresa / Razón social" placeholder="Ej. Mi Empresa S.A.C." hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Select" tone="dark" label="Número de trabajadores" options="{{ rangosTrabajadores }}" hint-size="100%,72px"></x-import>
+          <div style="display:grid;gridTemplateColumns:1fr 1fr;gap:18px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Input" tone="dark" label="Teléfono / WhatsApp" placeholder="+51 999 999 999" hint-size="100%,72px"></x-import>
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Input" tone="dark" type="email" label="Correo corporativo" placeholder="nombre@empresa.com" hint-size="100%,72px"></x-import>
+          </div>
+          <label style="display:flex;flexDirection:column;gap:6px">
+            <span style="fontSize:13px;fontWeight:700;color:#fff">Mensaje / Detalle de tu necesidad laboral actual</span>
+            <textarea rows="4" placeholder="Cuéntanos brevemente qué necesitas resolver" style="fontFamily:var(--font-body);fontSize:15px;padding:13px 16px;borderRadius:var(--radius-sm);border:none;background:rgba(255,255,255,0.12);color:#fff;outline:none;resize:vertical"></textarea>
+          </label>
+          <div style="display:flex;alignItems:center;gap:16px;flexWrap:wrap;marginTop:6px">
+            <x-import component-from-global-scope="TrustSolutionDesignSystem_75bad7.Button" size="lg" onClick="{{ enviar }}" hint-size="auto,58px">Agenda mi Diagnóstico</x-import>
+            <sc-if value="{{ enviado }}" hint-placeholder-val="{{ false }}">
+              <span style="display:inline-flex;alignItems:center;gap:8px;color:var(--ts-mint-300);fontWeight:700"><i class="ph-fill ph-check-circle"></i>¡Gracias! Te contactaremos hoy mismo.</span>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:64px 40px;textAlign:center">
+    <img src="assets/logo/trust-solution-logo-full.png" alt="Trust Solution Consultores SAC" style="height:76px;objectFit:contain" />
+    <p style="fontFamily:var(--font-display);fontWeight:700;color:var(--ts-mint-600);margin:18px 0 0;letterSpacing:0.02em">Orden • Cumplimiento • Tranquilidad</p>
+  </section>
+</main>
+</sc-if>
+
+<footer style="background:var(--surface-dark);color:#fff;padding:56px 40px 40px">
+  <div style="maxWidth:1180px;margin:0 auto;display:grid;gridTemplateColumns:1.2fr 1fr 1fr;gap:44px">
+    <div>
+      <img src="assets/logo/trust-solution-mark.png" alt="" style="height:52px;marginBottom:14px" />
+      <div style="fontFamily:var(--font-display);fontWeight:700;fontSize:18px">Trust Solution Consultores SAC</div>
+      <div style="fontSize:14px;color:rgba(255,255,255,0.7);marginTop:6px;maxWidth:320px">El escudo laboral de los empresarios. Orden • Cumplimiento • Tranquilidad.</div>
+    </div>
+    <div style="display:flex;flexDirection:column;gap:10px">
+      <div style="fontFamily:var(--font-display);fontWeight:700;color:var(--ts-mint-300);marginBottom:4px">Servicios</div>
+      <a onClick="{{ goCore }}" style="cursor:pointer;fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">Outsourcing Integral</a>
+      <a onClick="{{ goDemanda }}" style="cursor:pointer;fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">Servicios a Demanda</a>
+      <a onClick="{{ goPremium }}" style="cursor:pointer;fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">Soluciones Premium</a>
+      <a onClick="{{ goNosotros }}" style="cursor:pointer;fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">Nosotros</a>
+    </div>
+    <div style="display:flex;flexDirection:column;gap:10px">
+      <div style="fontFamily:var(--font-display);fontWeight:700;color:var(--ts-mint-300);marginBottom:4px">Contacto</div>
+      <a href="https://wa.me/51992823613" target="_blank" rel="noopener" style="fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">+51 992 823 613</a>
+      <a href="mailto:ealvarez@tsconsultoressac.com" style="fontSize:14px;color:rgba(255,255,255,0.8)" style-hover="color:#fff">ealvarez@tsconsultoressac.com</a>
+      <span style="fontSize:14px;color:rgba(255,255,255,0.8)">Lima, Perú</span>
+    </div>
+  </div>
+  <div style="maxWidth:1180px;margin:36px auto 0;paddingTop:20px;borderTop:1px solid rgba(255,255,255,0.15);fontSize:13px;color:rgba(255,255,255,0.55)">© 2026 Trust Solution Consultores SAC. Todos los derechos reservados.</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Inicio&quot;,&quot;Nosotros&quot;,&quot;Outsourcing Integral&quot;,&quot;Servicios a Demanda&quot;,&quot;Soluciones Premium&quot;,&quot;Contacto&quot;],&quot;default&quot;:&quot;Inicio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navegación&quot;}}">
+class Component extends DCLogic {
+  state = { page: null, enviado: false };
+  get page() { return this.state.page || this.props.startPage || 'Inicio'; }
+  go(p) {
+    this.setState({ page: p });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  renderVals() {
+    const p = this.page;
+    return {
+      isHome: p === 'Inicio',
+      isNosotros: p === 'Nosotros',
+      isCore: p === 'Outsourcing Integral',
+      isDemanda: p === 'Servicios a Demanda',
+      isPremium: p === 'Soluciones Premium',
+      isContacto: p === 'Contacto',
+      goHome: () => this.go('Inicio'),
+      goNosotros: () => this.go('Nosotros'),
+      goCore: () => this.go('Outsourcing Integral'),
+      goDemanda: () => this.go('Servicios a Demanda'),
+      goPremium: () => this.go('Soluciones Premium'),
+      goContacto: () => this.go('Contacto'),
+      rangosTrabajadores: ['1 - 5 trabajadores', '5 - 20 trabajadores', '20 - 50 trabajadores', 'Más de 50 trabajadores'],
+      enviado: this.state.enviado,
+      enviar: () => this.setState({ enviado: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>

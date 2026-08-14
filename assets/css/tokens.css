@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Trust Solution — Design tokens
+   Imported from Claude Design project "Crear página web adjunta"
+   (design system: trust-solution-design-system-75bad753)
+
+   Source files, concatenated verbatim in the DS load order:
+     tokens/colors.css · tokens/typography.css · tokens/spacing.css · tokens/effects.css
+
+   The DS `typography.css` pulls the webfonts with an @import; that has been
+   moved to <link rel="preload"> tags in each page so it does not block render.
+   ========================================================================== */
+
+/* --- tokens/colors.css ---------------------------------------------------- */
+:root {
+  /* Brand core — sampled from Trust Solution brochure (Aug 2026) */
+  --ts-mint-50: #eefbf6;
+  --ts-mint-100: #d7f5ea;
+  --ts-mint-200: #aeebd4;
+  --ts-mint-300: #7fe0bd;
+  --ts-mint-400: #5cd6ab;
+  --ts-mint-500: #44c99a;
+  --ts-mint-600: #34ad82;
+  --ts-mint-700: #278a68;
+  --ts-teal-400: #5aa6a4;
+  --ts-teal-500: #3b8d8b;
+  --ts-teal-600: #2b7a78;
+  --ts-teal-700: #1f6f6d;
+  --ts-teal-800: #187071;
+  --ts-teal-900: #124f4f;
+  --ts-white: #ffffff;
+  --ts-slate-50: #f6faf9;
+  --ts-slate-100: #eef4f3;
+  --ts-slate-200: #dfe9e7;
+  --ts-slate-300: #c3d4d2;
+  --ts-slate-400: #8fa6a4;
+  --ts-slate-500: #6b8987;
+  --ts-slate-600: #547372;
+  --ts-slate-800: #2c4645;
+  --ts-amber-500: #e0a53c;
+  --ts-red-500: #d9534f;
+
+  /* Semantic aliases */
+  --color-brand-primary: var(--ts-mint-500);
+  --color-brand-primary-hover: var(--ts-mint-600);
+  --color-brand-secondary: var(--ts-teal-700);
+  --color-brand-secondary-hover: var(--ts-teal-800);
+  --surface-page: var(--ts-white);
+  --surface-tint: var(--ts-mint-100);
+  --surface-tint-soft: var(--ts-mint-50);
+  --surface-card: var(--ts-white);
+  --surface-dark: var(--ts-teal-800);
+  --surface-dark-deep: var(--ts-teal-900);
+  --surface-muted: var(--ts-slate-50);
+  --text-heading: var(--ts-teal-700);
+  --text-body: var(--ts-slate-600);
+  --text-muted: var(--ts-slate-400);
+  --text-on-dark: var(--ts-white);
+  --text-on-mint: var(--ts-teal-800);
+  --border-subtle: var(--ts-slate-200);
+  --border-strong: var(--ts-slate-300);
+  --link-color: var(--ts-teal-700);
+  --link-hover: var(--ts-mint-600);
+  --color-success: var(--ts-mint-600);
+  --color-warning: var(--ts-amber-500);
+  --color-danger: var(--ts-red-500);
+  --gradient-brand: linear-gradient(135deg, var(--ts-mint-500) 0%, var(--ts-teal-700) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--ts-teal-500) 0%, var(--ts-teal-800) 100%);
+  --gradient-tint: linear-gradient(160deg, var(--ts-mint-100) 0%, var(--ts-white) 60%);
+}
+
+/* --- tokens/typography.css ------------------------------------------------ */
+:root {
+  --font-display: 'Baloo 2', ui-rounded, 'Segoe UI Rounded', system-ui, sans-serif;
+  --font-body: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fs-xs: 13px;
+  --fs-sm: 15px;
+  --fs-base: 17px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 30px;
+  --fs-3xl: 38px;
+  --fs-4xl: 48px;
+  --fs-5xl: 60px;
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+  --ls-caps: 0.14em;
+}
+
+/* --- tokens/spacing.css --------------------------------------------------- */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --container-max: 1200px;
+  --container-pad: 24px;
+}
+
+/* --- tokens/effects.css --------------------------------------------------- */
+:root {
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 8px rgba(24, 90, 88, 0.08);
+  --shadow-md: 0 8px 24px rgba(24, 90, 88, 0.12);
+  --shadow-lg: 0 20px 48px rgba(24, 90, 88, 0.16);
+  --shadow-icon: 0 10px 20px rgba(68, 201, 154, 0.35);
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+}
