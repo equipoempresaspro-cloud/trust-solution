@@ -55,29 +55,6 @@
   }
 
   /* ======================================================================
-     Hero video
-     ====================================================================== */
-  function initHeroVideo() {
-    var video = document.querySelector('.hero-split__media video');
-    if (!video) return;
-
-    // `autoplay` keeps the loop running for everyone else; visitors who asked
-    // for reduced motion get the poster frame as a still image instead.
-    var quiet = window.matchMedia('(prefers-reduced-motion: reduce)');
-    function apply() {
-      if (quiet.matches) {
-        video.removeAttribute('autoplay');
-        video.pause();
-      } else if (video.paused) {
-        video.play().catch(function () {});
-      }
-    }
-
-    apply();
-    if (quiet.addEventListener) quiet.addEventListener('change', apply);
-  }
-
-  /* ======================================================================
      Contact form
      ====================================================================== */
   function initForm() {
@@ -205,7 +182,6 @@
      ====================================================================== */
   function init() {
     initNav();
-    initHeroVideo();
     initForm();
   }
 
